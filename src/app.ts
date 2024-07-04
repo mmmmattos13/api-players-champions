@@ -9,7 +9,12 @@ export function createApp(){
     
     app.use("/api", router)
 
-    app.use(cors())
+    const corsOptions = {
+        origin: 'http://localhost:3333',
+        methods: ['GET']
+    }
+
+    app.use(cors(corsOptions))
 
     return app
 }
